@@ -3,13 +3,14 @@ import { getAnalytics } from "firebase/analytics";
 
 // ========== CONFIGURAÇÃO DO FIREBASE ==========
 const firebaseConfig = {
+  databaseURL: "https://banco-login-cc2ff-default-rtdb.firebaseio.com/",
   apiKey: "AIzaSyBnrRQ_vsI5unCZPSZ7amH2ghSHomboh-c",
   authDomain: "banco-login-cc2ff.firebaseapp.com",
-  databaseURL: "https://banco-login-cc2ff-default-rtdb.firebaseio.com/",
   projectId: "banco-login-cc2ff",
   storageBucket: "banco-login-cc2ff.firebasestorage.app",
   messagingSenderId: "344052622939",
   appId: "1:344052622939:web:485aa800b124eaeebd817e",
+  measurementId: "G-KLVGYXX7BN"
 };
 
 // Inicializa Firebase
