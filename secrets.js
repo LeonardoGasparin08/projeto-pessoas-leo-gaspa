@@ -1,0 +1,1 @@
+const FIREBASE_API_KEY = "AIzaSyBnrRQ_vsI5unCZPSZ7amH2ghSHomboh-c";
