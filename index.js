@@ -5,11 +5,11 @@ import { getAnalytics } from "firebase/analytics";
 const firebaseConfig = {
   apiKey: "AIzaSyBnrRQ_vsI5unCZPSZ7amH2ghSHomboh-c",
   authDomain: "banco-login-cc2ff.firebaseapp.com",
+  databaseURL: "https://banco-login-cc2ff-default-rtdb.firebaseio.com/",
   projectId: "banco-login-cc2ff",
   storageBucket: "banco-login-cc2ff.firebasestorage.app",
   messagingSenderId: "344052622939",
   appId: "1:344052622939:web:485aa800b124eaeebd817e",
-  measurementId: "G-KLVGYXX7BN"
 };
 
 // Inicializa Firebase
@@ -31,6 +31,7 @@ document.getElementById("btnCadastrar").addEventListener("click", async () => {
   }
 
   try {
+    const novoCadastroRef = database.ref("atletas").push();
     // ----- Envia pro Firestore -----
     await db.collection("atletas").add({
       nome,
@@ -38,7 +39,7 @@ document.getElementById("btnCadastrar").addEventListener("click", async () => {
       email,
       categoria,
       posicao,
-      dataCadastro: new Date()
+      dataCadastro: new Date().toISOString()
     });
 
     alert("✅ Atleta cadastrado com sucesso!");
