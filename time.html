@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Basketball Team - Roster</title>
+  <style>
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      margin: 5px;
+      background: #0ca747;
+      color: black;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: 0.3s;
+        }
+    .btn:hover {
+      background: #05e964;
+    }
+    * { 
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background-color: #0a0f0a;
+      color: white;
+      line-height: 1.6;
+      padding-top: 120px;
+    }
+
+    /* Navbar */
+    .navbar {
+      position: fixed;   
+      top: 0;           
+      left: 0;
+      width: 100%;      
+      height: 120px;
+      height: 120px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 40px;
+      background-color: #0a0f0a;
+      border-bottom: 1px solid #222;
+    }
+    .navbar .logo {
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+
+    .navbar ul {
+      display: flex;
+      gap: 20px;
+      list-style: none;
+    }
+
+    .navbar ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+
+    .navbar .profile {
+      margin-left: 15px;
+      cursor: pointer;
+    }
+
+    /* Conteúdo */
+    .container {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    h1 {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      font-size: 1.3rem;
+      margin: 30px 0 15px;
+    }
+
+    /* Grid de cards */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      text-align: center;
+    }
+
+    .card img {
+      width: 100%;
+      border-radius: 6px;
+    }
+
+    .card p {
+      margin-top: 8px;
+      font-size: 0.95rem;
+    }
+
+    .card span {
+      display: block;
+      font-size: 0.8rem;
+      color: #aaa;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo"><img src="rj png 2.png" width="200" height="100" alt=""></div>
+    <ul>
+      <a href="hist.html" class="btn">História</a>
+      <a href="time.html" class="btn">Elenco</a>
+      <a href="calen.html" class="btn">Calendário</a>
+      <a href="comoentrar.html" class="btn">Como Entrar</a>
+    </ul>
+  </nav>
+
+  <!-- Conteúdo -->
+  <div class="container">
+    <h1>Elenco</h1>
+
+    <h2>sub-17</h2>
+    <div class="grid">
+      <div class="card">
+        <img src="danilo.jpeg" alt="Ethan Carter">
+        <p>Danilo Carvalho <span>Point-Guard</span><span>Altura: 1,83</span></p>
+      </div>
+      <div class="card">
+        <img src="baccin.jpeg" alt="Noah Bennett">
+        <p>Arthur Baccin <span>Point-Guard</span><span>Altura: 1,74</span></p>
+      </div>
+      <div class="card">
+        <img src="nicolas gt.jpeg" alt="Aiden Foster">
+        <p>Nicolas Gottaro Teixeira <span>Shotting-Guard</span><span>Altura: 1,77</span></p>
+      </div>
+      <div class="card">
+        <img src="gigio.jpeg" alt="Owen Turner">
+        <p>Giovanni Lazzari <span>Shotting-Guard</span><span>Altura: 1,81</span></p>
+      </div>
+      <div class="card">
+        <img src="julio baldo.jpeg" alt="Liam Harper">
+        <p>Julio Baldo<span>Small-Forward</span><span>Altura: 1,91</span></p>
+      </div>
+      <div class="card">
+        <img src="bauler.jpeg" alt="Caleb Morgan">
+        <p>Henrique Bauler <span>Small-Forward</span><span>Altura: 1,80</span></p>
+      </div>
+      <div class="card">
+        <img src="tiago zd.jpeg" alt="Gabriel Scott">
+        <p>Tiago Zandonai De David <span>Small-Forward</span><span>Altura: 1,76</span></p>
+      </div>
+      <div class="card">
+        <img src="concatto.jpeg" alt="Wyatt Parker">
+        <p>Pedro Stumpf Concatto <span>Small-Forward</span><span>Altura: 1,91</span></p>
+      </div>
+      <div class="card">
+        <img src="drebes.jpeg" alt="Jackson Reed">
+        <p>Henrique Drebes <span>Power-Forward</span><span>Altura: 1,92</span></p>
+      </div>
+      <div class="card">
+        <img src="vitao.jpeg" alt="Samuel Hughes">
+        <p>Victor Selau <span>Power-Forward</span><span>Altura: 1,90</span></p>
+      </div>
+      <div class="card">
+        <img src="player6.jpeg" alt="Lucas Hayes">
+        <p>Hassan Raed Abdelnabi <span>Center</span><span>Altura: 2,03</span></p>
+      </div>
+      <div class="card">
+        <img src="acacio.jpeg" alt="Isaac Cooper">
+        <p>João Acácio <span>Center</span><span>Altura: 2,04</span></p>
+      </div>
+    </div>
+
+    <h2>Treinadores</h2>
+    <div class="grid">
+      <div class="card">
+        <img src="carlos.jpg" alt="Coach Alexander">
+        <p>Carlos Magno <span>Head Coach</span></p>
+      </div>
+      <div class="card">
+        <img src="franche.jpg" alt="Coach Bennett">
+        <p>João Henrique Franche <span>Assistant Coach</span></p>
+      </div>
+      <div class="card">
+        <img src="giuli.jpg" alt="Coach Davis">
+        <p>Giuliano Marramarco <span>Assistant Coach</span></p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
