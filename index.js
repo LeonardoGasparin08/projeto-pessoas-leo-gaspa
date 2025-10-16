@@ -1,11 +1,15 @@
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+
 // ========== CONFIGURAÇÃO DO FIREBASE ==========
 const firebaseConfig = {
-  apiKey: "SUA_API_KEY_AQUI",
-  authDomain: "SEU_PROJETO.firebaseapp.com",
-  projectId: "SEU_PROJETO",
-  storageBucket: "SEU_PROJETO.appspot.com",
-  messagingSenderId: "SEU_ID",
-  appId: "SUA_APP_ID"
+  apiKey: "AIzaSyBnrRQ_vsI5unCZPSZ7amH2ghSHomboh-c",
+  authDomain: "banco-login-cc2ff.firebaseapp.com",
+  projectId: "banco-login-cc2ff",
+  storageBucket: "banco-login-cc2ff.firebasestorage.app",
+  messagingSenderId: "344052622939",
+  appId: "1:344052622939:web:485aa800b124eaeebd817e",
+  measurementId: "G-KLVGYXX7BN"
 };
 
 // Inicializa Firebase
