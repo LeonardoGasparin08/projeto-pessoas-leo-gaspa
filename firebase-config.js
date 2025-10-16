@@ -1,11 +1,13 @@
 // Substitua os valores abaixo pelo seu projeto Firebase
 const firebaseConfig = {
-    apiKey: FIREBASE_API_KEY,
-    authDomain: "novo-projeto-cetec.firebaseapp.com",
-    projectId: "novo-projeto-cetec",
-    storageBucket: "novo-projeto-cetec.firebasestorage.app",
-    messagingSenderId: "1025785217301",
-    appId: "1:1025785217301:web:bf60ddbb1e93a46e5ae91c"
+    apiKey: "AIzaSyDcn0AfM0ljA72-c7v8u86FCYA3uPMnBxw",
+    authDomain: "arquivox-c9d74.firebaseapp.com",
+    databaseURL: "https://arquivox-c9d74-default-rtdb.firebaseio.com",
+    projectId: "arquivox-c9d74",
+    storageBucket: "arquivox-c9d74.firebasestorage.app",
+    messagingSenderId: "235350186717",
+    appId: "1:235350186717:web:6273c8f7e998257d5e9934"
+
 };
 
 firebase.initializeApp(firebaseConfig);

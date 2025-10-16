@@ -1,24 +1,26 @@
-// ========== CONFIGURAÇÃO DO FIREBASE ==========
-const firebaseConfig = {
-  apiKey: "SUA_API_KEY_AQUI",
-  authDomain: "SEU_PROJETO.firebaseapp.com",
-  projectId: "SEU_PROJETO",
-  storageBucket: "SEU_PROJETO.appspot.com",
-  messagingSenderId: "SEU_ID",
-  appId: "SUA_APP_ID"
-};
-
-// Inicializa Firebase
-firebase.initializeApp(firebaseConfig);
-const db = firebase.firestore();
 
 // ========== LÓGICA DO CADASTRO ==========
 document.getElementById("btnCadastrar").addEventListener("click", async () => {
-  const nome = document.getElementById("name").value.trim();
-  const cpf = document.getElementById("cpf").value.trim();
-  const email = document.getElementById("email").value.trim();
-  const categoria = document.getElementById("sub").value;
-  const posicao = document.getElementById("pos").value;
+  // Pega referências seguras aos elementos
+  const elName = document.getElementById("name");
+  const elCpf = document.getElementById("cpf");
+  const elEmail = document.getElementById("email");
+  const elCategoria = document.getElementById("sub");
+  const elPosicao = document.getElementById("pos");
+
+  // Valida existência dos elementos (evita erro ao tentar acessar .value de null)
+  if (!elName || !elCpf || !elEmail || !elCategoria || !elPosicao) {
+    console.error('Um ou mais elementos do formulário não foram encontrados no DOM.');
+    alert('Erro interno: elementos do formulário não encontrados. Veja o console.');
+    return;
+  }
+
+  // Extrai valores de forma consistente (inputs e selects usam .value)
+  const nome = (elName.value || '').toString().trim();
+  const cpf = (elCpf.value || '').toString().trim();
+  const email = (elEmail.value || '').toString().trim();
+  const categoria = (elCategoria.value || '').toString();
+  const posicao = (elPosicao.value || '').toString();
 
   // ----- Validação básica -----
   if (!nome || !cpf || !email || !categoria || !posicao) {
@@ -26,22 +28,27 @@ document.getElementById("btnCadastrar").addEventListener("click", async () => {
     return;
   }
 
-  try {
-    // ----- Envia pro Firestore -----
-    await db.collection("atletas").add({
-      nome,
-      cpf,
-      email,
-      categoria,
-      posicao,
-      dataCadastro: new Date()
+  // ----- Envia para Realtime Database no padrão da equipe -----
+  const novoRegistro = {
+    nome,
+    cpf: cpf,
+    email: email,
+    categoria: categoria,
+    posicao: posicao
+  };
+
+  db.ref('atletas').push(novoRegistro)
+    .then(() => {
+      alert("Registrado com sucesso!");
+      // Reset nos campos existentes do formulário
+      elName.value = '';
+      elCpf.value = '';
+      elEmail.value = '';
+      elCategoria.value = '';
+      elPosicao.value = '';
+    })
+    .catch((erro) => {
+      console.error("Erro ao cadastrar:", erro);
+      alert("❌ Ocorreu um erro ao cadastrar. Verifique o console para mais detalhes.");
     });
-
-    alert("✅ Atleta cadastrado com sucesso!");
-    document.querySelector("form").reset();
-
-  } catch (erro) {
-    console.error("Erro ao cadastrar:", erro);
-    alert("❌ Ocorreu um erro ao cadastrar. Verifique o console para mais detalhes.");
-  }
 });
