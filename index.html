@@ -1,37 +1,95 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LOGIN</title>
+  <title>Login - Modal</title>
   <style>
-    /* Reset básico */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, sans-serif;
+    /* ======== ESTILO DO BOTÃO PRINCIPAL ======== */
+    .open-modal-btn {
+      padding: 12px 24px;
+      background: #0ca747;
+      color: black;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 1rem;
+      transition: 0.3s;
+      margin: 40px auto;
+      display: block;
     }
 
-    body {
-      background-color: #0a0f0a;
-      color: white;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
+    .open-modal-btn:hover {
+      background: #05e964;
+      transform: scale(1.05);
     }
-    /* Login container */
-    .login-container {
-      flex: 1;
-      display: flex;
+
+    /* ======== ESTILO DO MODAL ======== */
+    .modal {
+      display: none; /* oculto por padrão */
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
       justify-content: center;
       align-items: center;
+      animation: fadeIn 0.3s ease;
     }
 
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+
+    .modal-content {
+      background-color: #0a0f0a;
+      padding: 30px;
+      border-radius: 10px;
+      width: 90%;
+      max-width: 400px;
+      color: white;
+      box-shadow: 0px 0px 15px #0ca747;
+      position: relative;
+      animation: slideUp 0.3s ease;
+    }
+
+    @keyframes slideUp {
+      from {transform: translateY(50px); opacity: 0;}
+      to {transform: translateY(0); opacity: 1;}
+    }
+
+    .btn-x {
+      box-shadow: 1px 1px 10px 0 #0ca747;
+      background: #003308;
+      border: 3px solid rgb(0, 0, 0);
+      color: #0ca747;
+      font-size: 22px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+      line-height: 1.5;
+      padding: 6px 16px;
+      border-radius: 50%;
+      position: absolute;
+      top: 15px;
+      right: 15px;
+    }
+
+    .btn-x:hover {
+      box-shadow: 1px 1px 10px 0 #ff4d4d;
+      background-color: rgba(128, 16, 16, 0.15);
+      color: #ff4d4d;
+      transform: scale(1.1);
+    }
+
+    /* ======== FORMULÁRIO ======== */
     .login-box {
       text-align: center;
       width: 100%;
-      max-width: 400px;
     }
 
     .login-box h2 {
@@ -43,6 +101,7 @@
       margin-bottom: 20px;
       text-align: left;
     }
+
     .form-group label {
       display: block;
       margin-bottom: 6px;
@@ -74,76 +133,61 @@
       font-weight: bold;
       cursor: pointer;
       margin-top: 10px;
-      transition: 0.3s
-      
+      transition: 0.3s;
     }
 
     .login-btn:hover {
       background: #05e964;
     }
-
-    .forgot-password {
-      margin-top: 15px;
-      display: inline-block;
-      font-size: 0.85rem;
-      color: #bbb;
-      text-decoration: none;
-    }
-
-    .forgot-password:hover {
-      text-decoration: underline;
-    }
   </style>
-
 </head>
 <body>
-  <!-- Login -->
-  <div class="login-container">
-    <div class="login-box">
-      <h2>Insira os dados do atleta para a inscrição</h2>
-      <form>
-        <div class="form-group">
-          <label for="Nome">Nome</label>
-          <input type="text" id="name" placeholder="Nome completo">
-        </div>  
-        <div class="form-group">
-          <label for="CPF">CPF</label>
-          <input type="number" id="cpf" placeholder="Insira seu CPF">
-        </div>
-        <div class="form-group">
-          <label for="Usuário">Email</label>
-          <input type="email" id="email" placeholder="Insira seu Email">
-        </div> 
-        <div class="form-group">
-          <label for="sub">Categoria</label>
-          <select id="sub">
-            <option value="">Selecione...</option>
-            <option value="sub13">Sub 13</option>
-            <option value="sub14">Sub 14</option>
-            <option value="sub15">Sub 15</option>
-            <option value="sub16">Sub 16</option>
-            <option value="sub17">Sub 17</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="posicao">Posição</label>
-          <select id="pos">
-            <option value="">Selecione...</option>
-            <option value="pg">Armador</option>
-            <option value="sg">Ala-armador</option>
-            <option value="sf">Ala</option>
-            <option value="pf">Ala-pivô</option>
-            <option value="c">Pivô</option>
-          </select>
-        </div>
-        <button id="btnCadastrar" class="login-btn" type="button">Cadastrar</button>
-      </form>
+  <!-- Botão para abrir o modal -->
+  <button id="openModal" class="open-modal-btn">Abrir Login</button>
+
+  <!-- Modal -->
+  <div id="loginModal" class="modal">
+    <div class="modal-content">
+      <button class="btn-x" id="closeModal">X</button>
+      <div class="login-box">
+        <h2>Insira os dados do atleta para a inscrição</h2>
+        <form>
+          <div class="form-group">
+            <label for="name">Nome</label>
+            <input type="text" id="name" placeholder="Nome completo">
+          </div>  
+          <div class="form-group">
+            <label for="cpf">CPF</label>
+            <input type="number" id="cpf" placeholder="Insira seu CPF">
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="Insira seu Email">
+          </div> 
+          <div class="form-group">
+            <label for="sub">Categoria</label>
+            <select id="sub">
+              <option value="">Selecione...</option>
+              <option value="sub13">Sub 13</option>
+              <option value="sub14">Sub 14</option>
+              <option value="sub15">Sub 15</option>
+              <option value="sub16">Sub 16</option>
+              <option value="sub17">Sub 17</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="pos">Posição</label>
+            <select id="pos">
+              <option value="">Selecione...</option>
+              <option value="pg">Armador</option>
+              <option value="sg">Ala-armador</option>
+              <option value="sf">Ala</option>
+              <option value="pf">Ala-pivô</option>
+              <option value="c">Pivô</option>
+            </select>
+          </div>
+          <button id="btnCadastrar" class="login-btn" type="button">Cadastrar</button>
+        </form>
+      </div>
     </div>
   </div>
-  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-database-compat.js"></script>
-  <script src="secrets.js"></script>
-  <script src="firebase-config.js"></script>
-  <script src="index.js"></script> 
-</body>
-</html>
