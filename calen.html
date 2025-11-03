@@ -15,7 +15,7 @@
       text-decoration: none;
       border-radius: 5px;
       transition: 0.3s;
-        }
+    }
     .btn:hover {
       background: #05e964;
     }
@@ -25,21 +25,18 @@
       box-sizing: border-box;
       font-family: Arial, sans-serif;
     }
-
     body {
       background-color: #0a0f0a;
       color: white;
       line-height: 1.6;
       padding-top: 120px;
     }
-
     /* Navbar */
     .navbar {
-      position: fixed;   
-      top: 0;           
+      position: fixed;
+      top: 0;
       left: 0;
-      width: 100%;      
-      height: 120px;
+      width: 100%;
       height: 120px;
       display: flex;
       justify-content: space-between;
@@ -48,29 +45,22 @@
       background-color: #0a0f0a;
       border-bottom: 1px solid #222;
     }
-
     .navbar .logo {
       font-size: 1.2rem;
       font-weight: bold;
       color: white;
     }
-
     .navbar ul {
       display: flex;
       gap: 20px;
       list-style: none;
     }
-
     .navbar ul li a {
       color: white;
       text-decoration: none;
       font-size: 0.95rem;
     }
 
-    .navbar .search {
-      margin-left: 15px;
-      cursor: pointer;
-    }
     /* Conteúdo */
     .container {
       max-width: 1100px;
@@ -90,20 +80,16 @@
       gap: 50px;
       margin-bottom: 40px;
     }
-
     .month {
       text-align: center;
     }
-
     .month h3 {
       margin-bottom: 10px;
     }
-
     table {
       border-collapse: collapse;
       margin: 0 auto;
     }
-
     th, td {
       width: 35px;
       height: 35px;
@@ -111,9 +97,26 @@
       border-radius: 50%;
       color: #ddd;
     }
-
     td.active {
       background-color: #00ff40;
+      color: black;
+      font-weight: bold;
+    }
+
+    /* Dias clicáveis */
+    td.clickable {
+      cursor: pointer;
+      background-color: #1a1f1a;
+      transition: 0.3s;
+    }
+    td.clickable:hover {
+      background-color: #00ff40;
+      color: black;
+      font-weight: bold;
+    }
+
+    td.selected {
+      background-color: #05e964;
       color: black;
       font-weight: bold;
     }
@@ -123,7 +126,6 @@
       font-size: 1.3rem;
       margin: 30px 0 15px;
     }
-
     .game-card {
       display: flex;
       align-items: center;
@@ -133,17 +135,14 @@
       border-radius: 8px;
       margin-bottom: 15px;
     }
-
     .game-card img {
       width: 50px;
       height: 50px;
       border-radius: 6px;
     }
-
     .game-info p {
       margin: 2px 0;
     }
-
     .game-info span {
       display: block;
       font-size: 0.85rem;
@@ -154,7 +153,7 @@
 <body>
   <!-- Navbar -->
   <nav class="navbar">
-   <div class="logo"><img src="rj png 2.png" width="200" height="100" alt=""></div>
+    <div class="logo"><img src="rj png 2.png" width="200" height="100" alt=""></div>
     <ul>
       <a href="hist.html" class="btn">História</a>
       <a href="time.html" class="btn">Elenco</a>
@@ -172,84 +171,109 @@
       <div class="month">
         <h3>November 2024</h3>
         <table>
+          <tr><th>D</th><th>S</th><th>T</th><th>Q</th><th>Q</th><th>S</th><th>S</th></tr>
+          <tr><td></td><td></td><td></td><td></td><td></td><td>1</td><td>2</td></tr>
+          <tr><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td></tr>
           <tr>
-            <th>S</th><th>M</th><th>T</th><th>W</th><th>T</th><th>F</th><th>S</th>
+            <td>10</td><td>11</td><td class="clickable" data-date="2024-11-12">12</td>
+            <td>13</td><td>14</td><td>15</td><td>16</td>
           </tr>
-          <tr>
-            <td></td><td></td><td></td><td></td><td></td><td>1</td><td>2</td>
-          </tr>
-          <tr>
-            <td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td>
-          </tr>
-          <tr>
-            <td>10</td><td>11</td><td class="active">12</td><td>13</td><td>14</td><td>15</td><td>16</td>
-          </tr>
-          <tr>
-            <td>17</td><td>18</td><td>19</td><td>20</td><td>21</td><td>22</td><td>23</td>
-          </tr>
-          <tr>
-            <td>24</td><td>25</td><td>26</td><td>27</td><td>28</td><td>29</td><td>30</td>
-          </tr>
+          <tr><td>17</td><td>18</td><td>19</td><td>20</td><td>21</td><td>22</td><td>23</td></tr>
+          <tr><td>24</td><td>25</td><td>26</td><td>27</td><td>28</td><td>29</td><td>30</td></tr>
         </table>
       </div>
+
       <div class="month">
         <h3>December 2024</h3>
         <table>
-          <tr>
-            <th>S</th><th>M</th><th>T</th><th>W</th><th>T</th><th>F</th><th>S</th>
-          </tr>
-          <tr>
-            <td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td>
-          </tr>
-          <tr>
-            <td>8</td><td>9</td><td>10</td><td>11</td><td>12</td><td>13</td><td>14</td>
-          </tr>
-          <tr>
-            <td>15</td><td>16</td><td>17</td><td>18</td><td>19</td><td>20</td><td>21</td>
-          </tr>
-          <tr>
-            <td>22</td><td>23</td><td>24</td><td>25</td><td>26</td><td>27</td><td>28</td>
-          </tr>
-          <tr>
-            <td>29</td><td>30</td><td>31</td><td></td><td></td><td></td><td></td>
-          </tr>
+          <tr><th>S</th><th>M</th><th>T</th><th>W</th><th>T</th><th>F</th><th>S</th></tr>
+          <tr><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td></tr>
+          <tr><td>8</td><td>9</td><td class="clickable" data-date="2024-12-10">10</td>
+            <td>11</td><td>12</td><td>13</td><td>14</td></tr>
+          <tr><td>15</td><td class="clickable" data-date="2024-12-15">16</td>
+            <td>17</td><td>18</td><td>19</td><td>20</td><td>21</td></tr>
+          <tr><td>22</td><td>23</td><td>24</td><td>25</td><td>26</td><td>27</td><td>28</td></tr>
+          <tr><td>29</td><td>30</td><td>31</td><td></td><td></td><td></td><td></td></tr>
         </table>
       </div>
     </div>
 
     <!-- Upcoming Games -->
     <h2 class="section-title">Upcoming Games</h2>
-    <div class="game-card">
-      <img src="team1.png" alt="Wildcats">
-      <div class="game-info">
-        <p>December 10, 2024, vs The Wildcats</p>
-        <span>7:00 PM | Home Arena</span>
-      </div>
-    </div>
-    <div class="game-card">
-      <img src="team2.png" alt="Hawks">
-      <div class="game-info">
-        <p>December 15, 2024, at The Hawks</p>
-        <span>8:00 PM | Away Arena</span>
-      </div>
+    <div class="upcoming-container">
+      <p>Select a day from the calendar to view scheduled games.</p>
     </div>
 
-    <!-- Past Games -->
-    <h2 class="section-title">Past Games</h2>
-    <div class="game-card">
-      <img src="team3.png" alt="Lions">
-      <div class="game-info">
-        <p>November 30, 2024, vs The Lions</p>
-        <span>Final Score: 89-76</span>
-      </div>
-    </div>
-    <div class="game-card">
-      <img src="team4.png" alt="Bears">
-      <div class="game-info">
-        <p>November 25, 2024, at The Bears</p>
-        <span>Final Score: 102-104</span>
-      </div>
-    </div>
-  </div>
+  <!-- Script -->
+  <script>
+    // Jogos por data
+    const gamesByDate = {
+      "2024-12-10": [
+        {
+          team: "Wildcats",
+          img: "team1.png",
+          location: "Home Arena",
+          time: "7:00 PM",
+          type: "vs"
+        }
+      ],
+      "2024-12-15": [
+        {
+          team: "Hawks",
+          img: "team2.png",
+          location: "Away Arena",
+          time: "8:00 PM",
+          type: "at"
+        }
+      ],
+      "2024-11-12": [
+        {
+          team: "Sharks",
+          img: "team5.png",
+          location: "Home Arena",
+          time: "6:30 PM",
+          type: "vs"
+        },
+        {
+          team: "Tigers",
+          img: "team6.png",
+          location: "Home Arena",
+          time: "9:00 PM",
+          type: "vs"
+        }
+      ]
+    };
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const cells = document.querySelectorAll("td.clickable");
+      const container = document.querySelector(".upcoming-container");
+
+      cells.forEach(cell => {
+        cell.addEventListener("click", () => {
+          // Remove destaque anterior
+          cells.forEach(c => c.classList.remove("selected"));
+          cell.classList.add("selected");
+
+          const date = cell.getAttribute("data-date");
+          const games = gamesByDate[date];
+
+          if (!games) {
+            container.innerHTML = `<p>No games scheduled for this day.</p>`;
+            return;
+          }
+
+          container.innerHTML = games.map(g => `
+            <div class="game-card">
+              <img src="${g.img}" alt="${g.team}">
+              <div class="game-info">
+                <p>${date} ${g.type === 'vs' ? 'vs' : 'at'} ${g.team}</p>
+                <span>${g.time} | ${g.location}</span>
+              </div>
+            </div>
+          `).join("");
+        });
+      });
+    });
+  </script>
 </body>
 </html>
