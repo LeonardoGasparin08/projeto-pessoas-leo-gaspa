@@ -164,18 +164,18 @@
 
   <!-- Conteúdo -->
   <div class="container">
-    <h1>Game Schedule</h1>
+    <h1>Calendário de jogos</h1>
 
     <!-- Calendário -->
     <div class="calendar">
       <div class="month">
-        <h3>November 2024</h3>
+        <h3>Novembro 2025</h3>
         <table>
           <tr><th>D</th><th>S</th><th>T</th><th>Q</th><th>Q</th><th>S</th><th>S</th></tr>
           <tr><td></td><td></td><td></td><td></td><td></td><td>1</td><td>2</td></tr>
           <tr><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td></tr>
           <tr>
-            <td>10</td><td>11</td><td class="clickable" data-date="2024-11-12">12</td>
+            <td>10</td><td>11</td><td class="clickable" data-date="12/11/2025">12</td>
             <td>13</td><td>14</td><td>15</td><td>16</td>
           </tr>
           <tr><td>17</td><td>18</td><td>19</td><td>20</td><td>21</td><td>22</td><td>23</td></tr>
@@ -184,61 +184,61 @@
       </div>
 
       <div class="month">
-        <h3>December 2024</h3>
+        <h3>Dezembro 2025</h3>
         <table>
-          <tr><th>S</th><th>M</th><th>T</th><th>W</th><th>T</th><th>F</th><th>S</th></tr>
-          <tr><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td></tr>
-          <tr><td>8</td><td>9</td><td class="clickable" data-date="2024-12-10">10</td>
-            <td>11</td><td>12</td><td>13</td><td>14</td></tr>
-          <tr><td>15</td><td class="clickable" data-date="2024-12-15">16</td>
-            <td>17</td><td>18</td><td>19</td><td>20</td><td>21</td></tr>
-          <tr><td>22</td><td>23</td><td>24</td><td>25</td><td>26</td><td>27</td><td>28</td></tr>
-          <tr><td>29</td><td>30</td><td>31</td><td></td><td></td><td></td><td></td></tr>
+          <tr><th>D</th><th>S</th><th>T</th><th>Q</th><th>Q</th><th>S</th><th>S</th></tr>
+          <tr><td></td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td></tr>
+          <tr><td>7</td><td>8</td><td>9</td><td class="clickable" data-date="10/12/2025">10</td>
+            <td>11</td><td>12</td><td>13</td></tr>
+          <tr><td>14</td><td>15</td><td class="clickable" data-date="16/12/2025">16</td>
+            <td>17</td><td>18</td><td>19</td><td>20</td></tr>
+          <tr><td>21</td><td>22</td><td>23</td><td>24</td><td>25</td><td>26</td><td>27</td></tr>
+          <tr><td>28</td><td>29</td><td>30</td><td>31</td><td></td><td></td><td></td><td></td></tr>
         </table>
       </div>
     </div>
 
     <!-- Upcoming Games -->
-    <h2 class="section-title">Upcoming Games</h2>
+    <h2 class="section-title">Próximos jogos</h2>
     <div class="upcoming-container">
-      <p>Select a day from the calendar to view scheduled games.</p>
+      <p>Selecione algum dia marcado para visualizar os próximos jogos</p>
     </div>
 
   <!-- Script -->
   <script>
     // Jogos por data
     const gamesByDate = {
-      "2024-12-10": [
+      "12/11/2025": [
         {
-          team: "Wildcats",
+          team: "Grêmio Náutico União",
           img: "team1.png",
-          location: "Home Arena",
-          time: "7:00 PM",
+          location: "Arena Recreio",
+          time: "6:00 PM",
           type: "vs"
         }
       ],
-      "2024-12-15": [
+      "10/12/2025": [
         {
-          team: "Hawks",
+          team: "CEAT bira",
           img: "team2.png",
-          location: "Away Arena",
+          location: "Arena Recreio",
           time: "8:00 PM",
-          type: "at"
+          type: "vs"
         }
       ],
-      "2024-11-12": [
+      "16/12/2025": [
         {
-          team: "Sharks",
-          img: "team5.png",
-          location: "Home Arena",
-          time: "6:30 PM",
+          team: "União Corinthians",
+          img: "team3.png",
+          location: "Arena Recreio",
+          time: "4:30 PM",
           type: "vs"
         },
         {
-          team: "Tigers",
-          img: "team6.png",
-          location: "Home Arena",
-          time: "9:00 PM",
+          team: "SOGIPA",
+          img: "team4.png",
+          location: "Arena Recreio",
+          time: "7:00 PM",
           type: "vs"
         }
       ]
