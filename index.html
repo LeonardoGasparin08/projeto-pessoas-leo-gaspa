@@ -3,41 +3,30 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LOGIN</title>
+  <title>Historia</title>
   <style>
-    
-    .btn-x {
-      box-shadow: 1px 1px 10px 0 #0ca747;
-      background: #003308;
-      border:3px solid rgb(0, 0, 0);
-      color: #0ca747;
-      font-size: 22px;
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      margin: 5px;
+      background: #0ca747;
+      color: black;
       font-weight: bold;
-      cursor: pointer;
-      transition: 0.3s; 
-      line-height: 1.5;
-      padding: 6px 16px;
-      border-radius: 50%;
-      position: fixed;  
-      top: 20px;         
-      left: 15px;       
-      z-index: 1000;     
+      text-decoration: none;
+      border-radius: 5px;
+      transition: 0.3s;
+        }
+
+    .btn:hover {
+      background: #05e964;
     }
 
-    .btn-x:hover {
-      box-shadow: 1px 1px 10px 0 #ff4d4d;
-      background-color: rgba(128, 16, 16, 0.15);
-      color: #ff4d4d;
-      transform: scale(1.1);
+    .parent{
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
-    .btn-x.top-right {
-      position: static;
-      top: 10px;
-      left: 10px;
-    }
-
-    /* Reset básico */
     * {
       margin: 0;
       padding: 0;
@@ -47,135 +36,130 @@
 
     body {
       background-color: #0a0f0a;
-      color: #ffffff;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
+      color: white;
+      line-height: 1.6;
+      padding-top: 120px;
+
     }
-    /* Login container */
-    .login-container {
-      flex: 1;
+
+    /* Navbar */
+    .navbar {
+      position: fixed;   
+      top: 0;           
+      left: 0;
+      width: 100%;      
+      height: 120px;
+      height: 120px;
       display: flex;
-      justify-content: center;
+      justify-content: space-between;
       align-items: center;
+      padding: 15px 40px;
+      background-color: #0a0f0a;
+      border-bottom: 1px solid #222;
     }
 
-    .login-box {
-      text-align: center;
-      width: 100%;
-      max-width: 400px;
+    .navbar .logo {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: white;
     }
 
-    .login-box h2 {
-      margin-bottom: 30px;
-      font-size: 1.5rem;
+    .navbar ul {
+      display: flex;
+      gap: 20px;
+      list-style: none; 
     }
 
-    .form-group {
+    .navbar ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+
+    .navbar .search {
+      margin-left: 15px;
+      cursor: pointer;
+    }
+
+    /* Conteúdo principal */
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    h1 {
+      font-size: 1.8rem;
       margin-bottom: 20px;
-      text-align: left;
     }
-    .form-group label {
-      display: block;
-      margin-bottom: 6px;
-      font-size: 0.9rem;
+
+    h2 {
+      font-size: 1.2rem;
+      margin: 20px 0 10px;
+      font-weight: bold;
+    }
+
+    p {
+      margin-bottom: 20px;
       color: #ccc;
     }
 
-    .form-group input,
-    .form-group select {
+    .content img {
       width: 100%;
-      padding: 12px;
-      border-radius: 6px;
-      border: none;
-      background-color: #101610;
-      color: white;
-      font-size: 1rem;
-      appearance: none;
-      cursor: pointer;
-    }
-
-    .login-btn {
-      width: 100%;
-      padding: 12px;
-      background-color: #0ca747;
-      border: none;
-      border-radius: 6px;
-      color: black;
-      font-size: 1rem;
-      font-weight: bold;
-      cursor: pointer;
-      margin-top: 10px;
-      transition: 0.3s
-      
-    }
-
-    .login-btn:hover {
-      background: #05e964;
-    }
-
-    .forgot-password {
-      margin-top: 15px;
-      display: inline-block;
-      font-size: 0.85rem;
-      color: #bbb;
-      text-decoration: none;
-    }
-
-    .forgot-password:hover {
-      text-decoration: underline;
+      border-radius: 8px;
+      margin: 15px 0 30px;
     }
   </style>
-
 </head>
 <body>
-  <a href="comoentrar.html" class="btn-x">X</a>
-  <div class="login-container">
-    <div class="login-box">
-      <h2>Insira os dados do atleta para a inscrição</h2>
-      <form>
-        <div class="form-group">
-          <label for="Nome">Nome</label>
-          <input type="text" id="name" placeholder="Nome completo">
-        </div>  
-        <div class="form-group">
-          <label for="CPF">CPF</label>
-          <input type="number" id="cpf" placeholder="Insira seu CPF">
-        </div>
-        <div class="form-group">
-          <label for="Usuário">Email</label>
-          <input type="email" id="email" placeholder="Insira seu Email">
-        </div> 
-        <div class="form-group">
-          <label for="sub">Categoria</label>
-          <select id="sub">
-            <option value="">Selecione...</option>
-            <option value="sub13">Sub 13</option>
-            <option value="sub14">Sub 14</option>
-            <option value="sub15">Sub 15</option>
-            <option value="sub16">Sub 16</option>
-            <option value="sub17">Sub 17</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="posicao">Posição</label>
-          <select id="pos">
-            <option value="">Selecione...</option>
-            <option value="pg">Armador</option>
-            <option value="sg">Ala-armador</option>
-            <option value="sf">Ala</option>
-            <option value="pf">Ala-pivô</option>
-            <option value="c">Pivô</option>
-          </select>
-        </div>
-        <button id="btnCadastrar" class="login-btn" type="button">Cadastrar</button>
-      </form>
+  <nav class="navbar">
+    <div class="logo"><img src="rj png 2.png" width="200" height="100" alt=""></div>
+    <ul>
+      <a href="index.html" class="btn">História</a>
+      <a href="time.html" class="btn">Elenco</a>
+      <a href="calen.html" class="btn">Calendário</a>
+      <a href="comoentrar.html" class="btn">Como Entrar</a>
+    </ul>
+  </nav>
+
+  <!-- Conteúdo -->
+  <div class="container">
+    <h1>História do Time</h1>
+
+    <h2>Origem </h2>
+    <p style="text-align: justify;">
+        O Recreio da Juventude é um dos clubes mais tradicionais da Serra Gaúcha, 
+      fundado em 28 de dezembro de 1912, em Caxias do Sul. 
+      Com o passar dos anos, o clube passou a investir fortemente na formação esportiva. 
+      O Departamento de Basquete do Recreio da Juventude passou a atuar desenvolvendo atletas de 6 a até 19 anos, 
+      tanto para lazer quanto para competições regionais, estaduais, nacionais e até em parceria com o Caxias do Sul Basquete 
+      Essa cooperação com o Caxias do Sul Basquete teve início em 2018 
+      e se revelou estratégica para o crescimento da modalidade na cidade. 
+      Desde então, o número de atletas nas escolinhas e equipes de competição saltou de 46 para 215, um aumento impressionante de 367% 
+      Essa parceria viabilizou ainda a presença do Recreio como sede e participante de competições importantes, 
+      como a Liga de Desenvolvimento do Basquete (LDB) — campeonato brasileiro sub-22. 
+      Em 2023, o clube sediou a primeira fase da LDB no Ginásio do Sesi em Caxias do Sul. 
+      O Caxias/Basquete–Recreio fechou essa fase com 100% de aproveitamento
+    </p>
+    <div class="content">
+      <img src="quadra imagem.png" alt="Team photo">
+    </div>
+
+    <h2>Príncipais conquistas</h2>
+    <p style="text-align: justify;">
+      O Basquete Recreio coleciona conquistas importantes nos últimos anos, 
+      consolidando-se como referência na formação e no alto rendimento. 
+      Entre os destaques estão o bicampeonato gaúcho Sub-19 (2023 e 2024), 
+      a conquista invicta do Sul-Brasileiro Sub-19, além do título da 
+      Classificatória B do CBI Sub-17 em 2025. Nas categorias de base, 
+      brilhou em praticamente todas as divisões, com títulos estaduais no Sub-12 e Sub-14
+      e pódios no Sub-15, Sub-16 e Sub-17. Também conquistou medalha de bronze no CBI 3x3 Sub-15, 
+      participou de torneios internacionais no Chile e levantou troféus em competições adultas e master, 
+      como o Aberto de Caxias do Sul e o Encontro Master de Basquete.
+    </p>
+    <div class="content">
+      <img src="cbi.jpg" alt="Trophy">
     </div>
   </div>
-  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-database-compat.js"></script>
-  <script src="secrets.js"></script>
-  <script src="firebase-config.js"></script>
-  <script src="index.js"></script> 
 </body>
 </html>
